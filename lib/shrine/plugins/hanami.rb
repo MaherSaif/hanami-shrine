@@ -101,7 +101,7 @@ class Shrine
               if file
                 attacher = uploader_class::Attacher.new(OpenStruct.new, name)
 
-                attacher.assign(file)
+                attacher.assign(file[:tempfile])
                 attacher.finalize
 
                 original_entity_attributes = original_entity.attributes.dup
